@@ -35,3 +35,6 @@ app.add_middleware(
 app.include_router(health.router)
 app.include_router(judgments.router)
 app.include_router(actions.router)
+@app.get("/")
+def root():
+    return {"message": "backend live"}
