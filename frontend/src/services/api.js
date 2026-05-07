@@ -68,16 +68,16 @@ export function getActions(params = {}) {
   });
 
   return request(
-    `/api/actions${search.toString() ? `?${search}` : ""}`
+    `/actions${search.toString() ? `?${search}` : ""}`
   );
 }
 
 export function getAction(id) {
-  return request(`/api/actions/${id}`);
+  return request(`/actions/${id}`);
 }
 
 export function verifyAction(id, payload) {
-  return request(`/api/actions/${id}/verify`, {
+  return request(`/actions/${id}/verify`, {
     method: "PATCH",
     headers: {
       "Content-Type": "application/json"
