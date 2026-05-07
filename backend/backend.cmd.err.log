@@ -1,0 +1,37 @@
+INFO:     Started server process [17240]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+2026-05-08 00:11:21,779 INFO nyaypath.requests request_id=e41c79772d25421ca0f6271a2778d4bb method=GET path=/health status=200 elapsed_ms=5.04
+2026-05-08 00:11:52,188 INFO nyaypath.requests request_id=af5afb675d044399a6d5d273a92fb11c method=GET path=/actions status=200 elapsed_ms=25.45
+2026-05-08 00:11:52,199 INFO nyaypath.requests request_id=4fd5f3e290a94a12a0ce78c68ed4a753 method=GET path=/actions status=200 elapsed_ms=6.94
+2026-05-08 00:11:53,563 INFO nyaypath.requests request_id=6f71115d478c43d08da1dd4614b723ee method=GET path=/actions status=200 elapsed_ms=7.37
+2026-05-08 00:11:53,572 INFO nyaypath.requests request_id=16941dd4855042eea63e3c5d4b9d47f8 method=GET path=/actions status=200 elapsed_ms=5.9
+2026-05-08 00:11:56,332 INFO nyaypath.requests request_id=f556ecd7eb50447ca9187bc6b104e91d method=GET path=/actions status=200 elapsed_ms=6.74
+2026-05-08 00:11:56,341 INFO nyaypath.requests request_id=9143411aa93a4b17a080d208448db775 method=GET path=/actions status=200 elapsed_ms=5.62
+2026-05-08 00:12:05,560 INFO nyaypath.requests request_id=e98e008480d94e46ad7bc2e707e8baf2 method=POST path=/judgments/upload status=200 elapsed_ms=84.58
+2026-05-08 00:12:05,578 INFO nyaypath.requests request_id=b6dde02e89c24bbcb2244aa2fe3bbe86 method=GET path=/judgments/1 status=200 elapsed_ms=8.68
+2026-05-08 00:12:05,595 INFO nyaypath.requests request_id=4dfd54346c644a36a4b8222fd7a32913 method=GET path=/judgments/1 status=200 elapsed_ms=7.9
+2026-05-08 00:12:24,088 INFO nyaypath.requests request_id=4432ec3b98ae41f682f8243281a80548 method=GET path=/actions status=200 elapsed_ms=4.97
+2026-05-08 00:12:24,097 INFO nyaypath.requests request_id=7501d995267244ffb24262f10d116ab5 method=GET path=/actions status=200 elapsed_ms=5.05
+2026-05-08 00:12:41,182 INFO nyaypath.requests request_id=70fd8fd463254a19988891bcbe408e72 method=PATCH path=/actions/1/verify status=200 elapsed_ms=20.18
+2026-05-08 00:12:41,190 INFO nyaypath.requests request_id=382327cdd0ad4ccaa1028b9ba9ae56cb method=GET path=/actions status=200 elapsed_ms=4.0
+2026-05-08 00:12:46,763 INFO nyaypath.requests request_id=00d79d59d7454462b42533b4df418518 method=GET path=/actions status=200 elapsed_ms=6.0
+2026-05-08 00:12:46,770 INFO nyaypath.requests request_id=5df04dd5288448f8b2b4ae532daf6838 method=GET path=/actions status=200 elapsed_ms=4.36
+2026-05-08 00:12:50,218 INFO nyaypath.requests request_id=cf1035da9d6f441dafcfae975bcbb092 method=GET path=/actions/1 status=200 elapsed_ms=4.98
+2026-05-08 00:12:50,224 INFO nyaypath.requests request_id=fc7d65fbb5744a7eb3aac9f1195f1a5b method=GET path=/actions/1 status=200 elapsed_ms=4.05
+2026-05-08 00:12:56,040 INFO nyaypath.requests request_id=0a98127cf7ec46a1ac8917996421757c method=GET path=/actions status=200 elapsed_ms=4.07
+2026-05-08 00:12:56,046 INFO nyaypath.requests request_id=8a9dd485990c40de9a3cf43ec5918fb2 method=GET path=/actions status=200 elapsed_ms=4.06
+2026-05-08 00:30:07,076 INFO nyaypath.requests request_id=725b14b40bfc4404bddbbb73567c10fc method=POST path=/judgments/upload status=200 elapsed_ms=68.25
+2026-05-08 00:30:07,094 INFO nyaypath.requests request_id=a6a6333e6aa44c50a6f632b2cc1727d6 method=GET path=/judgments/2 status=200 elapsed_ms=8.39
+2026-05-08 00:30:07,105 INFO nyaypath.requests request_id=a9f4fe6f24d547eab92f16fcc346f5e5 method=GET path=/judgments/2 status=200 elapsed_ms=6.73
+2026-05-08 00:30:12,814 INFO nyaypath.requests request_id=9e54c864e3c14fed9a2a15a87ce60e00 method=GET path=/actions/2 status=200 elapsed_ms=5.65
+2026-05-08 00:30:12,823 INFO nyaypath.requests request_id=80dc132f532b46b98c096c2ebf09e787 method=GET path=/actions/2 status=200 elapsed_ms=4.59
+2026-05-08 00:30:27,718 INFO nyaypath.requests request_id=f92c82b9187548bcbecf9aaf93e67a9c method=GET path=/actions status=200 elapsed_ms=7.52
+2026-05-08 00:30:27,725 INFO nyaypath.requests request_id=f0d6200b76984bd79542266d0552b52c method=GET path=/actions status=200 elapsed_ms=3.77
+2026-05-08 00:30:30,721 INFO nyaypath.requests request_id=fc0876ef6cab478886662b488228f672 method=GET path=/actions status=200 elapsed_ms=4.78
+2026-05-08 00:30:30,727 INFO nyaypath.requests request_id=acb011ca250e42a8913340e8113bc4db method=GET path=/actions status=200 elapsed_ms=4.68
+2026-05-08 00:30:32,800 INFO nyaypath.requests request_id=687b1ee2cbd54e8ba28b0cf56ab2b87f method=PATCH path=/actions/2/verify status=200 elapsed_ms=12.29
+2026-05-08 00:30:32,809 INFO nyaypath.requests request_id=d351dca9dc864472bc7afea8b0f89f90 method=GET path=/actions status=200 elapsed_ms=4.26
+2026-05-08 00:30:35,527 INFO nyaypath.requests request_id=845d0b3892e84cf593ca4eb40799d7ef method=GET path=/actions status=200 elapsed_ms=4.84
+2026-05-08 00:30:35,533 INFO nyaypath.requests request_id=a957ccb747eb4a3ba64a96b959d9dc2b method=GET path=/actions status=200 elapsed_ms=3.75
