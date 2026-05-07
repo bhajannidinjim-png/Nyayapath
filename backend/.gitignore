@@ -1,0 +1,7 @@
+nyaypath.db
+uploads/*
+!uploads/.gitkeep
+__pycache__/
+*.pyc
+.venv/
+.env
