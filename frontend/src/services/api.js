@@ -1,19 +1,103 @@
 const API_BASE_URL =
   "https://nyaypath-production.up.railway.app";
 
+const REQUEST_TIMEOUT_MS = 60000;
+
 async function request(path, options = {}) {
-  const response = await fetch(
-    `${API_BASE_URL}${path}`,
-    options
+  const controller = new AbortController();
+
+  const timeout = window.setTimeout(
+    () => controller.abort(),
+    REQUEST_TIMEOUT_MS
   );
 
-  if (!response.ok) {
-    throw new Error("Request failed");
-  }
+  try {
+    const response = await fetch(
+      `${API_BASE_URL}${path}`,
+      {
+        ...options,
+        signal: controller.signal
+      }
+    );
 
-  return response.json();
+    if (!response.ok) {
+      const body = await response
+        .json()
+        .catch(() => ({}));
+
+      throw new Error(
+        body.detail ||
+        "Request failed. Please try again."
+      );
+    }
+
+    return response.json();
+  } catch (error) {
+    if (error.name === "AbortError") {
+      throw new Error(
+        "Request timeout."
+      );
+    }
+
+    throw error;
+  } finally {
+    window.clearTimeout(timeout);
+  }
 }
 
-export function getActions(status = "approved") {
-  return request(`/actions?status=${status}`);
+export function uploadJudgment(file) {
+  const formData = new FormData();
+
+  formData.append("file", file);
+
+  return request("/judgments/upload", {
+    method: "POST",
+    body: formData
+  });
+}
+
+export function getJudgments() {
+  return request("/judgments");
+}
+
+export function getJudgment(id) {
+  return request(`/judgments/${id}`);
+}
+
+export function getActions(params = {}) {
+  const search = new URLSearchParams();
+
+  Object.entries(params).forEach(
+    ([key, value]) => {
+      if (value) {
+        search.append(key, value);
+      }
+    }
+  );
+
+  return request(
+    `/actions${
+      search.toString()
+        ? `?${search}`
+        : ""
+    }`
+  );
+}
+
+export function getAction(id) {
+  return request(`/actions/${id}`);
+}
+
+export function verifyAction(id, payload) {
+  return request(
+    `/actions/${id}/verify`,
+    {
+      method: "PATCH",
+      headers: {
+        "Content-Type":
+          "application/json"
+      },
+      body: JSON.stringify(payload)
+    }
+  );
 }
