@@ -1,8 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.routes.actions import router as actions_router
-
 app = FastAPI()
 
 app.add_middleware(
@@ -18,22 +16,18 @@ app.add_middleware(
 
 @app.get("/")
 def root():
-    return {
-        "message": "backend live"
-    }
+    return {"message": "backend live"}
 
 @app.get("/health")
 def health():
-    return {
-        "status": "ok"
-    }
+    return {"status": "ok"}
 
 @app.get("/actions")
-def direct_actions():
+def actions(status: str | None = None):
     return [
         {
-            "status": "working"
+            "id": 1,
+            "title": "Test Action",
+            "status": status or "approved"
         }
     ]
-
-app.include_router(actions_router)
