@@ -8,7 +8,8 @@ app = FastAPI()
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "https://nyayapath-pied.vercel.app"
+        "https://nyayapath-pied.vercel.app",
+        "http://localhost:5173"
     ],
     allow_credentials=True,
     allow_methods=["*"],
@@ -17,10 +18,22 @@ app.add_middleware(
 
 @app.get("/")
 def root():
-    return {"message": "backend live"}
+    return {
+        "message": "backend live"
+    }
 
 @app.get("/health")
 def health():
-    return {"status": "ok"}
+    return {
+        "status": "ok"
+    }
+
+@app.get("/actions")
+def direct_actions():
+    return [
+        {
+            "status": "working"
+        }
+    ]
 
 app.include_router(actions_router)
