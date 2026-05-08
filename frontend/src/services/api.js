@@ -1,5 +1,5 @@
 const API_BASE_URL =
-  "https://nyaypath-production.up.railway.app";
+  "https://nyayapath-production.up.railway.app";
 
 const REQUEST_TIMEOUT_MS = 60000;
 
